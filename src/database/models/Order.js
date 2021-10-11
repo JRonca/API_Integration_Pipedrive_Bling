@@ -8,17 +8,26 @@ const itemSchema = new mongoose.Schema({
 })
 
 const orderSchema = new mongoose.Schema({
-    pedido:{
-        cliente:{
-            nome: String
-        },
-        itens:{
-            types: Map,
-            of: itemSchema
-        }
+    cliente:{
+        nome: String
+    },
+    itens:{
+        type: Array,
+        of: itemSchema
     }
 })
 
-const Order = mongoose.model('Order', orderSchema);
+const dayOrderSchema = new mongoose.Schema(
+    {
+        data: Date,
+        valor_total: Number,
+        pedidos:{
+            type: Array,
+            of: orderSchema
+        }
+    }
+)
+
+const Order = mongoose.model('Order', dayOrderSchema);
 
 export default Order;

@@ -12,5 +12,5 @@ export async function getWonDealsProducts(id){
 
     const result = await api.get(`/deals/${id}/products?api_token=${process.env.PIPEDRIVE_KEY_API}`)
 
-    return result.data
+    return result.data.data
 }
