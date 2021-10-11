@@ -4,6 +4,7 @@
 
 <p  align="center">
 <a  href="#use">Como Usar</a> •
+<a  href="#routes">Rotas</a> •
 <a  href="#features">Features</a> 
 </p>
 <hr/>
@@ -23,8 +24,24 @@ $ yarn
 
 # Execute o servidor em modo de desenvolvimento
 $ yarn dev
+
 ```
 
+<h2 id="routes" align="center">Rotas</h2>
+Base URL: http://localhost:3333<br/>
+Get: /order<br/>
+<p> Lista a collection que agrega as oportunidades inseridas no bling </p>
+Post: /order<br/>
+<p> Busca as oportunidades referentes ao dia passado no body no Pipedrive e insere as mesmas no mongoDB e no Bling </p>
+
+```json
+#Body:
+{
+	"date": "2021-10-11"
+}
+```
+
+OBS.: O arquivo Insomnia_2021-10-11 está configurado com essas rotas, basta importá-lo no insomnia e utilizar.
 
 <h2 id="features" align="center">Features</h2>
 
